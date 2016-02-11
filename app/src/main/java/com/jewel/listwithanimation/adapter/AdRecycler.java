@@ -45,7 +45,8 @@ public class AdRecycler extends RecyclerView.Adapter<AdRecycler.MyViewHolder>{
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.tvName.setText(list.get(position));
-        MyAnimation.animateLeftRight(holder,true);
+        //MyAnimation.animateLeftRight(holder,true);
+        MyAnimation.animateUpDown(holder,position);
     }
 
     @Override
