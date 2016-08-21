@@ -64,7 +64,8 @@ public class AdRecycler extends RecyclerView.Adapter<AdRecycler.MyViewHolder>{
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MyAnimation.animateLeftRight(itemView, false);
+//                    MyAnimation.animateLeftRight(itemView, false);
+                    MyAnimation.rotation(itemView, false);
                 }
             });
         }

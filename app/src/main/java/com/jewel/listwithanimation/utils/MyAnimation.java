@@ -2,6 +2,7 @@ package com.jewel.listwithanimation.utils;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.animation.ValueAnimator;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -41,6 +42,15 @@ public class MyAnimation {
     public static void animateLeftRight(View view,boolean isLeft){
         ObjectAnimator animator= ObjectAnimator.ofFloat(view, "translationX", isLeft?100:0, isLeft?0:100);
         animator.setDuration(1000);
+        animator.start();
+    }
+    public static void rotation(View view,boolean isLeft){
+        view.setPivotX(view.getX()+view.getWidth()/2);
+        view.setPivotY(view.getY()+view.getHeight()/2);
+        ObjectAnimator animator= ObjectAnimator.ofFloat(view, "rotationY",0,180);
+        animator.setRepeatMode(ValueAnimator.REVERSE);
+        animator.setRepeatCount(1);
+        animator.setDuration(2000);
         animator.start();
     }
 }
